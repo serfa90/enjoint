@@ -6,18 +6,24 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SmokingRoomsIcon from '@material-ui/icons/SmokingRooms';
-import './NavBar.css'
+import {CartWidget} from '../CartWidget/Cartwidget'
+import Badge from '@material-ui/core/Badge';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
+
     menuButton: {
       marginRight: theme.spacing(1),
     },
     title: {
       fontFamily: 'Fredoka One',
       marginRight: theme.spacing(2),
+      flexGrow: 1,
+    },
+    barra: {
+      backgroundColor: 'green',
+    },
+    contacto: {
+      marginRight: theme.spacing(10),
     },
     offset: theme.mixins.toolbar
   }));
@@ -27,7 +33,7 @@ export const NavBar = props => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="sticky" color="secondary">
+      <AppBar position="sticky" className={classes.barra}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="Inherit" aria-label="menu">
             <SmokingRoomsIcon />
@@ -37,7 +43,10 @@ export const NavBar = props => {
           </Typography>
           <Button color="inherit" edge="start">Productos</Button>
           <Button color="inherit">Quienes Somos?</Button>
-          <Button color="inherit">Contacto</Button>
+          <Button color="inherit" className={classes.contacto}>Contacto</Button>
+          <Badge badgeContent={5} color="secondary">
+            <CartWidget className={classes.carrito}/>
+          </Badge>
         </Toolbar>
       </AppBar>
       <div className={classes.offset}></div>
