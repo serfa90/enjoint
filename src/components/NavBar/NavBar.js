@@ -6,8 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SmokingRoomsIcon from '@material-ui/icons/SmokingRooms';
-import {CartWidget} from '../CartWidget/Cartwidget'
-import Badge from '@material-ui/core/Badge';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -29,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export const NavBar = props => {
+  
   const classes = useStyles();
+  const {children} = props;
 
   return (
     <div className={classes.root}>
@@ -44,9 +45,7 @@ export const NavBar = props => {
           <Button color="inherit" edge="start">Productos</Button>
           <Button color="inherit">Quienes Somos?</Button>
           <Button color="inherit" className={classes.contacto}>Contacto</Button>
-          <Badge badgeContent={5} color="secondary">
-            <CartWidget className={classes.carrito}/>
-          </Badge>
+          {children}
         </Toolbar>
       </AppBar>
       <div className={classes.offset}></div>
