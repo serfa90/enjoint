@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 export const ItemListContainer = props => {
 
     const classes = useStyles();
+    const {Texto} = props;
     
-    return <h1 className={classes.texto}>PRÓXIMAMENTE..</h1>
+    return <h1 className={classes.texto}>{Texto}</h1>
 }

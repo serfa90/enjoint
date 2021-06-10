@@ -11,7 +11,7 @@ const App = props => {
   <NavBar>
     <CartWidget/>
   </NavBar>
-  <ItemListContainer/>
+  <ItemListContainer Texto="PRÓXIMAMENTE.."/>
   </>
 }
 
