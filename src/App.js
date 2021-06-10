@@ -2,6 +2,7 @@ import React from 'react'
 import {NavBar} from './components/NavBar/NavBar'
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 import {CartWidget} from '../src/components/CartWidget/Cartwidget'
+import {ItemCount} from './components/ItemCount/ItemCount'
 
 
 const App = props => {
@@ -11,7 +12,9 @@ const App = props => {
   <NavBar>
     <CartWidget/>
   </NavBar>
-  <ItemListContainer Texto="PRÓXIMAMENTE.."/>
+  <ItemListContainer Texto="BIENVENIDOS!!">
+    <ItemCount/>
+  </ItemListContainer>
   </>
 }
 
