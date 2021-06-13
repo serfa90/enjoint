@@ -12,9 +12,6 @@ const App = props => {
   <NavBar>
     <CartWidget/>
   </NavBar>
-  <ItemListContainer Texto="BIENVENIDOS!!">
-    <ItemCount/>
-  </ItemListContainer>
   </>
 }
 
