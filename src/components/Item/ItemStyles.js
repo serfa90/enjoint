@@ -3,7 +3,7 @@ export const ItemStyles = theme => {
         maxWidth: 250,
         display: "flex",
         flexDirection: "column",
-        margin: '1em'
+        margin: '1em',
       },
       title: {
         color: "black",

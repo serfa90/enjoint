@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavBar} from './components/NavBar/NavBar'
-import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 import {CartWidget} from '../src/components/CartWidget/Cartwidget'
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 
@@ -12,7 +12,7 @@ const App = props => {
   <NavBar>
     <CartWidget/>
   </NavBar>
-  <ItemListContainer/>
+  <ItemDetailContainer/>
  
   </>
 }

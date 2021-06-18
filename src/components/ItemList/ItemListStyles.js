@@ -7,8 +7,6 @@ export const ItemListStyles = theme => {
         },
         contPadre: {
             padding: theme.spacing(2),
-            margin: '4em'
-
         }
     })
 }
