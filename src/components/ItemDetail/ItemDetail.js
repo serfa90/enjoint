@@ -14,7 +14,7 @@ export const ItemDetail = props => {
 
    return <div className={classes.root}>
        <div>
-           <img src={picture.foto} alt={picture.alt}/>
+           <img src={picture.foto} alt={picture.alt} className={classes.picture}/>
        </div>
        <div>
         <Typography variant="h4" component="h2" color="textPrimary" className={classes.title}>{title}</Typography>

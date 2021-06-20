@@ -4,7 +4,7 @@ export const ItemDetailStyle = theme => {
     maxWidth: '50%',
     flexDirection: 'column',
     boxShadow: '10px 10px 8px 10px #888888',
-    margin: "1em",
+    margin: "-3em 1em 1em 1em",
     padding: "1em"
     },
     title:{
@@ -18,6 +18,9 @@ export const ItemDetailStyle = theme => {
     },
     price:{
       color: "black"
+    },
+    picture: {
+      maxWidth: "100%"
     }
 })
 }
