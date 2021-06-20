@@ -17,9 +17,9 @@ export const ItemDetail = props => {
            <img src={picture.foto} alt={picture.alt}/>
        </div>
        <div>
-        <Typography variant="h4" component="h2" color="textPrimary">{title}</Typography>
-        <Typography variant="body1" component="p" color="textPrimary">{description}</Typography>
-        <Typography variant="body2" component="p" color="textSecondary">${price}</Typography>
+        <Typography variant="h4" component="h2" color="textPrimary" className={classes.title}>{title}</Typography>
+        <Typography variant="body1" component="p" color="textPrimary" className={classes.description}>{description}</Typography>
+        <Typography variant="h5" component="p" color="textSecondary" className={classes.price}><b>Precio: </b> ${price}</Typography>
        </div>
    </div>
 };

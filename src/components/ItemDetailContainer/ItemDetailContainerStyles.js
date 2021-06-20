@@ -1,10 +1,11 @@
 export const ItemDetailContainerStyles = theme => {
 
     return ({
-        root:{
+        progreso:{
             display: 'flex',
             width: '100%',
             justifyContent: 'center',
+            marginTop: "15em"
         } ,
     })
 }

@@ -16,10 +16,10 @@ const myPromise = () => {
                 {
                     id: 12, 
                     title: 'Carpa de Cultivo Indoor 60x60x160 cm', 
-                    description: 'Carpa de cultivo para interior 60x60x160cm. super discreta y sobriaSu altura es perfecta para incorporar todos los accesorios de cultivo. El tamaño es ideal porque se adapta a cualquier ambiente y permite cultivar de una a dos macetas comodamente. ', 
+                    description: 'Carpa de cultivo para interior 60x60x160cm. super discreta y sobria. Su altura es perfecta para incorporar todos los accesorios de cultivo. El tamaño es ideal porque se adapta a cualquier ambiente y permite cultivar de una a dos macetas comodamente. ', 
                     price: 15500,
                     picture:{
-                        foto:'https://picsum.photos/100',
+                        foto:'https://picsum.photos/300',
                         alt: "Carpa 60x60x160cm"
                     }
                 }
@@ -44,17 +44,11 @@ export const ItemDetailContainer = () => {
     
         return <>
         
-        { data.length === 0 ? (<div className={classes.root}><CircularProgress/></div>) : (
+        { data.length === 0 ? (<div className={classes.progreso}><CircularProgress/></div>) : (
         <Grid container>
              <Grid item xs={12}>
                  <Grid container justify="center">
-                     {data.map((elem)=><ItemDetail key={elem.id} 
-                      title={elem.title} 
-                      description={elem.description}
-                      price={elem.price}
-                      picture={elem.picture.foto}  
-                      alt={elem.picture.alt}
-                      />)}
+                     {data.map((elem,i)=><ItemDetail key={i} {...elem} className={classes.card} />)}
                     </Grid>
                 </Grid>
             </Grid>)
