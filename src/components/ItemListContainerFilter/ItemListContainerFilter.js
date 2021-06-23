@@ -10,7 +10,7 @@ const myPromise = () => {
     })
 }
 
-export const ItemListContainer = props => {
+export const ItemListContainerFilter = props => {
 
     const [productos, setProductos] = useState([]);
 
@@ -19,8 +19,11 @@ export const ItemListContainer = props => {
     const iniciarItemList = () => {
 
        
-        myPromise().then(data => {setProductos(data)})
-                
+        myPromise().then((producto) => {
+                    const productoFiltrado = producto.filter((element) => element.category === category);
+                    setProductos(productoFiltrado);
+        
+                });
                 
     };
 
@@ -30,3 +33,5 @@ export const ItemListContainer = props => {
             <ItemList productos={productos}/>
         </>
     }
+
+    export default ItemListContainerFilter; 

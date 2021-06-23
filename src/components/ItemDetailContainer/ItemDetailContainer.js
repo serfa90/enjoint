@@ -4,29 +4,17 @@ import { ItemDetailContainerStyles } from './ItemDetailContainerStyles';
 import {ItemDetail} from '../ItemDetail/ItemDetail';
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import {jointData} from '../Services/jointData';
+import {useParams} from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme)=> ItemDetailContainerStyles(theme));
 
 const myPromise = () => {
     return new Promise ((resolve, reject) => {
-        setTimeout(() => resolve (
-            [
-                {
-                    id: 12, 
-                    title: 'Carpa de Cultivo Indoor 60x60x160 cm', 
-                    description: 'Carpa de cultivo para interior 60x60x160cm. super discreta y sobria. Su altura es perfecta para incorporar todos los accesorios de cultivo. El tamaño es ideal porque se adapta a cualquier ambiente y permite cultivar de una a dos macetas comodamente. ', 
-                    price: 15500,
-                    picture:{
-                        foto:'https://picsum.photos/300',
-                        alt: "Carpa 60x60x160cm"
-                    }
-                }
-            ]
-        ),2000);
-    }); 
-};
+        setTimeout(() => resolve (jointData), 2000)
+    })
+}
 
 export const ItemDetailContainer = () => {
 
@@ -34,13 +22,18 @@ export const ItemDetailContainer = () => {
 
     const [data, setData] = useState([]);
 
+    const { id } = useParams();
+
     const iniciarDetailList = () => {
 
-        myPromise().then(data => {setData(data)})
-    }
+        myPromise().then((data) => {
+            const dataFiltrada = data.filter((element) => element.id === id);
+            setData(dataFiltrada);
 
-        useEffect(() => {iniciarDetailList()}, [])
+        });
+    };
     
+        useEffect(() => {iniciarDetailList()},[id]);
     
         return <>
         

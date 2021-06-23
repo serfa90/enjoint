@@ -10,7 +10,7 @@ export const ItemDetail = props => {
    
     const classes = useStyles();
    
-    const { title, description, price, picture} = props;
+    const { title, detail, price, picture} = props;
 
    return <div className={classes.root}>
        <div>
@@ -18,7 +18,7 @@ export const ItemDetail = props => {
        </div>
        <div>
         <Typography variant="h4" component="h2" color="textPrimary" className={classes.title}>{title}</Typography>
-        <Typography variant="body1" component="p" color="textPrimary" className={classes.description}>{description}</Typography>
+        <Typography variant="body1" component="p" color="textPrimary" className={classes.description}>{detail}</Typography>
         <Typography variant="h5" component="p" color="textSecondary" className={classes.price}><b>Precio: </b> ${price}</Typography>
        </div>
    </div>

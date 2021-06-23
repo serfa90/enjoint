@@ -1,19 +1,16 @@
 import React from 'react'
-import {NavBar} from './components/NavBar/NavBar'
-import {CartWidget} from '../src/components/CartWidget/Cartwidget'
-import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
+import {BrowserRouter} from 'react-router-dom'
+import { Ruteo } from './components/Ruteo/Ruteo'
 
 
 
-const App = props => {
+const App = () => {
 
   return <>
-
-  <NavBar>
-    <CartWidget/>
-  </NavBar>
-  <ItemDetailContainer/>
- 
+  <BrowserRouter>
+   <Ruteo/>
+  </BrowserRouter>
+  
   </>
 }
 
