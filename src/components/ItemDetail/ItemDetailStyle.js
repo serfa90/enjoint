@@ -21,6 +21,12 @@ export const ItemDetailStyle = theme => {
     },
     picture: {
       width: "40%"
+    },
+    picContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padingRight: "1em"
     }
 })
 }

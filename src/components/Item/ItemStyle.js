@@ -14,6 +14,9 @@ export const ItemStyle = theme => {
            display: "flex",
            justifyContent: "center",
            color: "green",
+           backgroundColor: "#E8E8E8",
+           textDecoration: "none",
+           fontWeight: 700
          },   
        })
    }

@@ -9,10 +9,21 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         width: 200,
     },
-    botones: {
+    botonMas: {
         marginRight: 5,
         width: 50,
-        
+        backgroundColor: "green",
+        '&:hover':{
+            backgroundColor: "#004000"
+        }        
+    },
+    botonMenos: {
+        marginRight: 5,
+        width: 50,
+        backgroundColor: "grey",
+        '&:hover':{
+            backgroundColor: "#4c4c4c"
+        }
     },
     agregar: {
         marginLeft: -50,
@@ -23,6 +34,11 @@ const useStyles = makeStyles((theme) => ({
 export const ItemCount = props => {
 
     const classes = useStyles();
+
+    const finalizarCompra = () => {
+
+        return <Button className={classes.agregar}>Finalizar compra</Button>
+    }
 
     const [cantidad, setCantidad] = useState(0);
     const Aumentar = () => {
@@ -39,9 +55,9 @@ export const ItemCount = props => {
     return <div className={classes.contenedor}>
           <h2 className={classes.contador}>Cantidad: {cantidad}</h2>
           <div className={classes.contBoton}>
-              <Button className={classes.botones} onClick={Aumentar} variant="contained" color="primary">+</Button>
-              <Button className={classes.botones} onClick={Disminuir} variant="contained" color="secondary">-</Button>
+              <Button className={classes.botonMas} onClick={Aumentar} variant="contained" color="primary">+</Button>
+              <Button className={classes.botonMenos} onClick={Disminuir} variant="contained" color="secondary">-</Button>
           </div>
-          <Button className={classes.agregar}>Agregar al carrito</Button>
+          <Button className={classes.agregar} onClick={finalizarCompra}>Agregar al carrito</Button>
       </div> 
 }

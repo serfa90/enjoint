@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import {ItemDetailStyle} from './ItemDetailStyle';
 import Typography from '@material-ui/core/Typography';
+import {ItemCount} from '../ItemCount/ItemCount'
 
 
 const useStyles = makeStyles((theme)=> ItemDetailStyle(theme));
@@ -13,8 +14,9 @@ export const ItemDetail = props => {
     const { title, detail, price, picture} = props;
 
    return <div className={classes.root}>
-       <div>
+       <div className={classes.picContainer}>
            <img src={picture.foto} alt={picture.alt} className={classes.picture}/>
+           <ItemCount/>
        </div>
        <div>
         <Typography variant="h4" component="h2" color="textPrimary" className={classes.title}>{title}</Typography>
