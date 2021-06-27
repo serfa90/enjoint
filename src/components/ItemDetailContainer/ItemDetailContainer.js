@@ -22,8 +22,6 @@ export const ItemDetailContainer = () => {
 
     const [data, setData] = useState([]);
 
-    const [visible, setVisible] = useState()
-
     const { id } = useParams();
 
     const iniciarDetailList = () => {
@@ -34,10 +32,9 @@ export const ItemDetailContainer = () => {
 
         });
     };
-
-
     
-        useEffect(() => {iniciarDetailList()},[]);
+        useEffect(() => {iniciarDetailList()});
+
     
         return <>
         

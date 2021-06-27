@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+
 const useStyles = makeStyles((theme) => ({
     contenedor: {
         margin: theme.spacing(2),
@@ -35,18 +36,20 @@ export const ItemCount = props => {
 
     const classes = useStyles();
 
-    const finalizarCompra = () => {
+    const [cantidad, setCantidad] = useState(1);
 
-        return <Button className={classes.agregar}>Finalizar compra</Button>
-    }
+       const Aumentar = () => {
 
-    const [cantidad, setCantidad] = useState(0);
-    const Aumentar = () => {
-        setCantidad(cantidad + 1);
+        if(cantidad === 10){
+
+        }else{
+            setCantidad(cantidad + 1);
+        }
+        
     }
     const Disminuir = () => {
 
-        if (cantidad === 0){
+        if (cantidad === 1){
 
         }else{
             setCantidad(cantidad - 1);
@@ -55,9 +58,15 @@ export const ItemCount = props => {
     return <div className={classes.contenedor}>
           <h2 className={classes.contador}>Cantidad: {cantidad}</h2>
           <div className={classes.contBoton}>
-              <Button className={classes.botonMas} onClick={Aumentar} variant="contained" color="primary">+</Button>
-              <Button className={classes.botonMenos} onClick={Disminuir} variant="contained" color="secondary">-</Button>
+              <Button disabled={cantidad===10} className={classes.botonMas} onClick={Aumentar} variant="contained" color="primary">+</Button>
+              <Button disabled={cantidad===1} className={classes.botonMenos} onClick={Disminuir} variant="contained" color="secondary">-</Button>
           </div>
-          <Button className={classes.agregar} onClick={finalizarCompra}>Agregar al carrito</Button>
+                <Button 
+                    className={classes.agregar}
+                    onClick={e => props.agregar(cantidad)}
+                    disabled={cantidad === 0 ? true : false}
+                >
+                    Agregar al carrito
+                </Button>
       </div> 
 }
